@@ -22,6 +22,7 @@ const Landing = () => {
             </p>
             </Grid>
         <Grid item
+        container
         direction="row"
         justifyContent="center"
         alignItems="center"
