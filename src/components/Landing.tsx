@@ -1,16 +1,14 @@
+"use client";
+
 import * as React from "react"
 import {Button, TextField, Grid} from "@mui/material"
 import Image from "next/image";
-import Head from "next/head";
 import bbpic from "../../public/bbpic.svg";
 
 
 const Landing = () => {
     return (
-        <>
-        <Head>
-        <title>Bridge | Landing</title>
-    </Head>
+        
         <Grid
         className="Landing"
         container direction="column"
@@ -35,7 +33,7 @@ const Landing = () => {
         variant="outlined"/>
         <Button variant ="contained">Signup</Button>
         </Grid>
-        <Grid item>
+        <Grid item ={true}>
             <Image
             style={{
                 maxWidth: "700px",
@@ -48,7 +46,6 @@ const Landing = () => {
             className="pointer"/>
         </Grid>
         </Grid>
-        </> 
      );
 }
  

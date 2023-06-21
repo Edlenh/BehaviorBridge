@@ -17,13 +17,15 @@ export default function Header({ switchTheme} : {switchTheme: any}){
             direction="row"
             justifyContent={pathname ==="/" ?"center": "space-between"}
             alignItems="center">
-                <Grid item lg={6}>
-                    <h1><Diversity1Icon 
+                <Grid item ={true} lg={6}>
+                    <Diversity1Icon 
                     sx={{fontSize: 50,
                     mt:1,
-                    }}/></h1>
+                    }}
+                    />
                     </Grid>
                 <Grid
+                item ={true}
                 xs={6}
                 rowSpacing ={1}
                 container
@@ -37,7 +39,7 @@ export default function Header({ switchTheme} : {switchTheme: any}){
                     icon={<LightModeIcon />}
                     checkedIcon={<DarkModeIcon />}
                     />
-                }label={<Brightness6Icon/>}/>
+                }label={<LightModeIcon/>}/>
                 <Avatar
                     className="pointer"
                     onClick ={() => router.push("/profile")}
