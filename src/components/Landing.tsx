@@ -1,8 +1,9 @@
+
 "use client";
 
 import * as React from "react"
 import {useState} from "react";
-import {Button, TextField, Grid} from "@mui/material"
+import {Button, TextField, Grid,Alert} from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
 
@@ -11,7 +12,7 @@ import supabase from "../../supabase";
 const Landing = () => {
     const [email, setEmail] = useState(null);
     const [loading, setLoading]= useState(false)
-    const [sucess, setSuccess]= useState(false)
+    const [success, setSuccess]= useState(false)
 
     const login = async ()=>{
         if(!email) alert("Please Provide Valid Email")
@@ -50,17 +51,21 @@ const Landing = () => {
         alignItems="center"
         sx={{py:2}}>
 
-        <TextField
-        sx={{mr :2}}
-        size="small"
-        label="your@mail.com"
-        variant="outlined"
-        onChange={(e) => setEmail(e.target.value)}
-        />
-
-<Button variant="contained" onClick={login}>
+{!success && (
+          <div>
+            <TextField
+              sx={{ mr: 2 }}
+              size="small"
+              label="me@mail.com"
+              variant="outlined"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Button variant="contained" onClick={login}>
               Signup
             </Button>
+          </div>
+        )}
+             {success && <Alert severity="info">Please check your mailbox.</Alert>}
         </Grid>
 
         <Grid item ={true}>

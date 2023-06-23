@@ -17,7 +17,8 @@ import {
 import { DateTimePicker } from "@mui/x-date-pickers";
 import { Event } from "@/types";
 import { LoadingButton } from "@mui/lab";
-
+import supabase from "../../supabase";
+import { useAuthContext } from "@/app/context";
 
 type Props = {
   setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
@@ -25,6 +26,7 @@ type Props = {
 };
 
 export default function Form({ setEvents, setOpen }: Props) {
+  const {user} = useAuthContext();
   const [state, setState] = useState<any>({
     loading: false,
     error: undefined});
@@ -54,20 +56,25 @@ const handleChange = (index: number, key: keyof Event)=>{
         [key]: [...event[key], index],
     }));
 }
-  const saveEvent= ()=> {
+  const saveEvent= async ()=> {
     setState({...state, error: undefined});
     if(!event.date){
         setState({...state,error:"Please enter valid date"});
         return;
     }
     try{
-        setState({...state, loading: true});
-        setEvents((prevEvents)=> [...prevEvents,event]);
-        setOpen(false);
+      setEvent({...event, user_id: user.id})
+    const { data, error } = await supabase.from('events').insert(event)
+
+    if(data){
+      setEvents((prevEvents)=> [...prevEvents,event]);
+      setOpen(false)
+    }
+    console.log(event)
     } catch(error){
         console.log(error)
     } finally{
-        setState({...state, loading: false})
+        setLoading(false)
     }
   }
 
@@ -154,7 +161,7 @@ const handleChange = (index: number, key: keyof Event)=>{
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <p>Symptoms</p>
+            <p>Target Behavior</p>
             <Grid>
               {config.symptoms.map((x, y) => (
                 <FormControlLabel

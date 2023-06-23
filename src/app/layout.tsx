@@ -6,9 +6,12 @@ import { lightTheme, darkTheme } from './theme/theme';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
+import { AuthContextProvider } from './context';
 
-import Header from "@/components/Header"
-import Landing from '@/components/Landing';
+// import supabase from '../../supabase';
+
+// import Header from "@/components/Header"
+// import Landing from '@/components/Landing';
 
 //todo fix this metadata error
 
@@ -23,20 +26,41 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   //state for logged in users
-  const [isLoggedIn, setIsLoggedIn]=useState(false)
+  // const [isLoggedIn, setIsLoggedIn]=useState(false);
+  const[user,setUser] = useState(false)
   //state for dark and light themes
   const [isDark, setIsDark] = useState(false);
     const switchTheme: any= ()=>{
       setIsDark(!isDark);
-    }
+    };
+
+    // const onAuthStateChange = async ()=>{
+    //   try {
+    //   //get user from supabase
+    //   const{
+    //     data: {user},
+    //   } = await supabase.auth.getUser();
+    //   console.log(user)
+    //   if(user){
+    //       setUser(user);
+    //   }
+
+    //   } catch (error) {
+    //     console.log(error)
+    //   } finally{
+
+    //   }
+    // };
+
   return (
     <html lang="en">
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <CssBaseline />
       <body>
-        <Header switchTheme={switchTheme}/>
-        {!isLoggedIn ?  <Landing />:children}
+        <AuthContextProvider switchTheme={switchTheme}>
+        {children}
+        </AuthContextProvider>
         </body>
       </LocalizationProvider>
       </ThemeProvider>
