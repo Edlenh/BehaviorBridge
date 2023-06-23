@@ -5,7 +5,7 @@ const config = {
     "Avoidance",
     "Scripting",
     "Task Repetition",
-    "Self Stimuli",
+    "Self Stimuli(Flapping Hands, Clicking, Snapping)",
     
     ],
     locations: [

@@ -12,7 +12,6 @@ import {
   Box,
   FormControlLabel,
   Checkbox,
-  TextField,
   Alert,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers";
@@ -95,7 +94,7 @@ const handleChange = (index: number, key: keyof Event)=>{
               onChange={(newValue) =>
                 setEvent({
                   ...event,
-                  date: dayjs().format()
+                  date: dayjs(newValue.toString()).format(),
                 })
               }
             />
@@ -108,9 +107,13 @@ const handleChange = (index: number, key: keyof Event)=>{
               sx={{ mb: 1 }}
               alignItems="center"
             >
-             
-              <TextField
-              id="standard-basic" label="Min / Hrs" variant="standard" 
+              <span>0</span>
+              <Slider
+                defaultValue={1}
+                step={1}
+                min={0}
+                max={72}
+                valueLabelDisplay="auto"
                 onChange={(e) => {
                   const inputElement = e.target as HTMLInputElement;
                   setEvent({
@@ -119,11 +122,11 @@ const handleChange = (index: number, key: keyof Event)=>{
                   });
                 }}
               />
-             
+              <span>24</span>
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <p>Severity Level (from 0 to 10: 10 being emergency)</p>
+            <p>Record Severity (from 0 to 10)</p>
             <Stack
               spacing={2}
               direction="row"
@@ -150,7 +153,7 @@ const handleChange = (index: number, key: keyof Event)=>{
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <p>Target Behaviors</p>
+            <p>Symptoms</p>
             <Grid>
               {config.symptoms.map((x, y) => (
                 <FormControlLabel
@@ -213,7 +216,7 @@ const handleChange = (index: number, key: keyof Event)=>{
           <Grid item xs={12}>
             <Button
               disabled={loading}
-              style={{ marginRight: "6px" ,color: "#0077B6" }}
+              style={{ marginRight: "6px" }}
               variant="outlined"
               onClick={() => setOpen(false)}
             >
