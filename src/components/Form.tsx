@@ -94,7 +94,7 @@ const handleChange = (index: number, key: keyof Event)=>{
               onChange={(newValue) =>
                 setEvent({
                   ...event,
-                  date: dayjs(newValue.toString()).format(),
+                  date: dayjs().format()
                 })
               }
             />
