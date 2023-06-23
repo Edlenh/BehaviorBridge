@@ -1,12 +1,34 @@
 "use client";
 
 import * as React from "react"
+import {useState} from "react";
 import {Button, TextField, Grid} from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
 
+import supabase from "../../supabase";
 
 const Landing = () => {
+    const [email, setEmail] = useState(null);
+    const [loading, setLoading]= useState(false)
+    const [sucess, setSuccess]= useState(false)
+
+    const login = async ()=>{
+        if(!email) alert("Please Provide Valid Email")
+        try {
+            setLoading(true)
+            const { data, error } = await supabase.auth.signInWithOtp({
+                email,
+            })
+            if (data) {
+                setSuccess(true);
+              }
+        } catch (error) {
+          console.log(error)  
+        } finally{
+            setLoading(false)
+        }
+    };
     return (
         
         <Grid
@@ -26,14 +48,21 @@ const Landing = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{py:2}}   >
+        sx={{py:2}}>
+
         <TextField
         sx={{mr :2}}
         size="small"
         label="your@mail.com"
-        variant="outlined"/>
-        <Button variant ="contained">Signup</Button>
+        variant="outlined"
+        onChange={(e) => setEmail(e.target.value)}
+        />
+
+<Button variant="contained" onClick={login}>
+              Signup
+            </Button>
         </Grid>
+
         <Grid item ={true}>
             <Image
             style={{

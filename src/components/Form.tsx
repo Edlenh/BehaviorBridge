@@ -40,6 +40,7 @@ export default function Form({ setEvents, setOpen }: Props) {
     count: 0,
   });
 
+  //handle change and events from supabase db
 const handleChange = (index: number, key: keyof Event)=>{
     if(event[key].includes(index)){
         setEvent(()=> ({

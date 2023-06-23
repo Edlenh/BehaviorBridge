@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   //state for logged in users
-  const [isLoggedIn, setIsLoggedIn]=useState(true)
+  const [isLoggedIn, setIsLoggedIn]=useState(false)
   //state for dark and light themes
   const [isDark, setIsDark] = useState(false);
     const switchTheme: any= ()=>{
