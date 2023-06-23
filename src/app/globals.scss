@@ -1,0 +1,10 @@
+.react-calendar-heatmap {
+    color: #00B4D8;
+  }
+
+  @media (max-width: 768px) {
+    .Calendar {
+      display: flex;
+      flex-direction: column;
+    }
+  }

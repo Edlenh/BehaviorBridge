@@ -5,6 +5,8 @@ import {Container , Grid} from "@mui/material"
 import UserHeader from "@/components/User/Header";
 import Calender from "@/components/Calender";
 import { Event } from "@/types";
+import Form from "@/components/Form"
+import  "./globals.scss"
 
 const Home = () => {
   const [events,setEvents]=useState<Array<Event>>([])
@@ -15,7 +17,8 @@ const Home = () => {
         <UserHeader />
       </Grid>
       <Grid>
-        <Calender events={events} setOpen={setOpen}/>
+        {!open && <Calender events={events} setOpen={setOpen} />}
+        {open && <Form setEvents={setEvents} setOpen={setOpen} />}
       </Grid>
     </Container>
    );

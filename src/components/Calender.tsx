@@ -1,5 +1,4 @@
 "use client";
-
 import dayjs from "dayjs"
 import CalendarHeatmap from 'react-calendar-heatmap';
 import "react-calendar-heatmap/dist/styles.css";
@@ -12,7 +11,7 @@ type Props ={
 };
 
 //pass props to the calender
-export default function Calender({events, setOpen}: Props){
+export default function Calendar({events, setOpen}: Props){
     let yearly = dayjs().subtract(365, "days").format("YYYY-MM-DD");
     const formattedEvents = events.map((event)=>({
         ...event,
@@ -20,16 +19,24 @@ export default function Calender({events, setOpen}: Props){
         date: dayjs(event.date).format("YYYY-MM-DD"),
     }))
     return(
-        <Grid item className="Calender border" sx={{p:4}}>
+        <Grid item className="Calendar" sx={{p:4, border: 3,
+         borderColor:"#00B4D8",
+         borderRadius: 10,
+         borderTopLeftRadius: 1,
+         borderBottomRightRadius: 25,
+         borderBottom: 12,
+          }}>
             <Grid 
             direction="row"
-            container item
+            container 
+            item
             justifyContent="space-between"
             alignItems="center"
             justifyItems="center"
             sx={{mb:4}}>
                 <h1>Track New Behavior</h1>
-                <Button
+                <Button 
+                sx={{color: "#00B4D8", borderColor: "#00B4D8"}}
                 className="info"
                 variant="outlined"
                 onClick={()=>setOpen(true)}
