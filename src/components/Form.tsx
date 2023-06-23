@@ -1,6 +1,6 @@
 "use client";
 import dayjs from "dayjs";
-import config from "../../config" 
+import config from "../util/config" 
 import { useState, useEffect } from "react";
 import {
   Card,
@@ -12,6 +12,7 @@ import {
   Box,
   FormControlLabel,
   Checkbox,
+  TextField,
   Alert,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers";
@@ -107,13 +108,9 @@ const handleChange = (index: number, key: keyof Event)=>{
               sx={{ mb: 1 }}
               alignItems="center"
             >
-              <span>0</span>
-              <Slider
-                defaultValue={1}
-                step={1}
-                min={0}
-                max={72}
-                valueLabelDisplay="auto"
+             
+              <TextField
+              id="standard-basic" label="Min / Hrs" variant="standard" 
                 onChange={(e) => {
                   const inputElement = e.target as HTMLInputElement;
                   setEvent({
@@ -122,11 +119,11 @@ const handleChange = (index: number, key: keyof Event)=>{
                   });
                 }}
               />
-              <span>24</span>
+             
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <p>Record Severity (from 0 to 10)</p>
+            <p>Severity Level (from 0 to 10: 10 being emergency)</p>
             <Stack
               spacing={2}
               direction="row"
@@ -153,7 +150,7 @@ const handleChange = (index: number, key: keyof Event)=>{
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <p>Symptoms</p>
+            <p>Target Behaviors</p>
             <Grid>
               {config.symptoms.map((x, y) => (
                 <FormControlLabel
@@ -216,7 +213,7 @@ const handleChange = (index: number, key: keyof Event)=>{
           <Grid item xs={12}>
             <Button
               disabled={loading}
-              style={{ marginRight: "6px" }}
+              style={{ marginRight: "6px" ,color: "#0077B6" }}
               variant="outlined"
               onClick={() => setOpen(false)}
             >
