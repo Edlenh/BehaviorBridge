@@ -104,7 +104,7 @@ const handleChange = (index: number, key: keyof Event)=>{
             />
           </Grid>
           <Grid item xs={12}>
-            <p>How long did it last?</p>
+            <p>Duration. Min / HR</p>
             <Stack
               spacing={2}
               direction="row"
@@ -116,7 +116,7 @@ const handleChange = (index: number, key: keyof Event)=>{
                 defaultValue={1}
                 step={1}
                 min={0}
-                max={72}
+                max={24}
                 valueLabelDisplay="auto"
                 onChange={(e) => {
                   const inputElement = e.target as HTMLInputElement;

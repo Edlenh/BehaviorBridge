@@ -1,15 +1,12 @@
-
 "use client";
-
 import * as React from "react"
-import {useState} from "react";
 import {Button, TextField, Grid,Alert} from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
-
+import BasicCard from "./Card";
 
 const Landing = () => {
-
+  
     return (
         
         <Grid
@@ -24,6 +21,9 @@ const Landing = () => {
                 keeping track of behaviors in their daily life.
             </p>
             </Grid>
+
+        <BasicCard />
+
         <Grid item
         container
         direction="row"

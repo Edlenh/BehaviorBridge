@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        {/* localizationprovider helps with setting date and time  */}
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <CssBaseline />
       <body>

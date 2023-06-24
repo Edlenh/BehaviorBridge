@@ -4,6 +4,9 @@ import CalendarHeatmap from 'react-calendar-heatmap';
 import "react-calendar-heatmap/dist/styles.css";
 import {Alert, AlertTitle, Button, Grid} from "@mui/material";
 import { Event } from "@/types";
+import AiHelp from "./openAi"
+import HorizontalLinearStepper from "./Rec";
+import '../app/globals.scss'
 
 type Props ={
     events: Event[];
@@ -44,20 +47,24 @@ export default function Calendar({events, setOpen}: Props){
                     New
                 </Button>
             </Grid>
-            <CalendarHeatmap startDate ={yearly}
+            <CalendarHeatmap 
+           onClick={value => alert("Behavior Tracked!")}
+            startDate ={yearly}
             showWeekdayLabels
             values={formattedEvents}
             classForValue={(value)=>{
                 if(!value){
                     return"color-empty";
                 }
-                return `primary opacity-${value.count}`;
+               
+                return `color-github-${value.count}`;
             }}
+          
             />
             {/* todo: add chatgpt engine to provide recs */}
-            <Alert severity="info">
-                <AlertTitle>Aba</AlertTitle>
-                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati</span>
+            <Alert severity="info"> <AlertTitle>Feeling Frustrated?</AlertTitle>
+                
+                <span><HorizontalLinearStepper /></span>
                 </Alert> 
         </Grid>
     );

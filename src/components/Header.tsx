@@ -40,7 +40,7 @@ export default function Header({switchTheme} : {switchTheme:any}){
                         justifyContent="flex-end">
                            <FormControlLabel
                 control ={
-                    <Switch onChange={switchTheme} name="Ed" color="primary"
+                    <Switch onChange={switchTheme} name="User" color="primary"
                     icon={<LightModeIcon />}
                     checkedIcon={<DarkModeIcon />}
                     />

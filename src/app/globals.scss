@@ -1,10 +1,25 @@
-.react-calendar-heatmap {
-    color: #00B4D8;
-  }
 
-  @media (max-width: 768px) {
-    .Calendar {
-      display: flex;
-      flex-direction: column;
-    }
+  .react-calendar-heatmap .color-filled {
+    fill: #CAF0F8;
+  }
+  .react-calendar-heatmap .color-github-0 {
+    fill: #eeeeee;
+  }
+  .react-calendar-heatmap .color-github-1 {
+    fill: #CAF0F8;
+  }
+  .react-calendar-heatmap .color-github-2 {
+    fill: #CAF0F8;
+  }
+  .react-calendar-heatmap .color-github-3 {
+    fill: #CAF0F8;
+  }
+  .react-calendar-heatmap .color-github-4 {
+    fill: #90E0EF;
+  }
+  
+
+  .react-calendar-heatmap rect:hover {
+    stroke: #555;
+    stroke-width: 1px;
   }
