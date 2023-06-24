@@ -2,16 +2,13 @@
 
 import * as React from "react";
 import { Avatar, Grid, Button } from "@mui/material";
-import { useAuthContext } from "@/app/context";
+
 import { useRouter } from "next/navigation";
 
 export default function UserHeader(){
     const router = useRouter()
-    const {user, signOut} = useAuthContext();
-    const logout = ()=>{
-        signOut();
-        router.push("/");
-    }
+ 
+    
     return(
         <Grid sx={{my: 6}} container alignItems="center">
             <Grid item sx={{mr:4}}>
@@ -19,13 +16,12 @@ export default function UserHeader(){
                     U
                 </Avatar>
             </Grid>
-            {user && (
             <Grid item>
-                <h1>{user.email}</h1>
-                <p style={{marginBottom: "12px"}}>{user.email}</p>
-                <Button onClick={logout}>Sign Out</Button>
+                <h1>Hello</h1>
+                <p style={{marginBottom: "12px"}}>You</p>
+                <Button>Sign Out</Button>
             </Grid>
-            )}
+           
         </Grid>
     )
 }

@@ -17,8 +17,7 @@ import {
 import { DateTimePicker } from "@mui/x-date-pickers";
 import { Event } from "@/types";
 import { LoadingButton } from "@mui/lab";
-import supabase from "../../supabase";
-import { useAuthContext } from "@/app/context";
+
 
 type Props = {
   setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
@@ -26,7 +25,7 @@ type Props = {
 };
 
 export default function Form({ setEvents, setOpen }: Props) {
-  const {user} = useAuthContext();
+
   const [state, setState] = useState<any>({
     loading: false,
     error: undefined});
@@ -42,7 +41,7 @@ export default function Form({ setEvents, setOpen }: Props) {
     count: 0,
   });
 
-  //handle change and events from supabase db
+  // handle change and events 
 const handleChange = (index: number, key: keyof Event)=>{
     if(event[key].includes(index)){
         setEvent(()=> ({
@@ -63,18 +62,15 @@ const handleChange = (index: number, key: keyof Event)=>{
         return;
     }
     try{
-      setEvent({...event, user_id: user.id})
-    const { data, error } = await supabase.from('events').insert(event)
+    setState({...state, loading: true})
+    setEvents((prevEvents)=> [...prevEvents, event])
+    setOpen(false)
 
-    if(data){
-      setEvents((prevEvents)=> [...prevEvents,event]);
-      setOpen(false)
-    }
     console.log(event)
     } catch(error){
         console.log(error)
     } finally{
-        setLoading(false)
+        setState({...state, loading:false})
     }
   }
 

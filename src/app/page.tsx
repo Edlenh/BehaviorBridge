@@ -8,6 +8,7 @@ import { Event } from "@/types";
 import Form from "@/components/Form"
 import  "./globals.scss"
 
+
 const Home = () => {
   const [events,setEvents]=useState<Array<Event>>([])
   const [open, setOpen] =useState(false)

@@ -7,29 +7,9 @@ import {Button, TextField, Grid,Alert} from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
 
-import supabase from "../../supabase";
 
 const Landing = () => {
-    const [email, setEmail] = useState(null);
-    const [loading, setLoading]= useState(false)
-    const [success, setSuccess]= useState(false)
 
-    const login = async ()=>{
-        if(!email) alert("Please Provide Valid Email")
-        try {
-            setLoading(true)
-            const { data, error } = await supabase.auth.signInWithOtp({
-                email,
-            })
-            if (data) {
-                setSuccess(true);
-              }
-        } catch (error) {
-          console.log(error)  
-        } finally{
-            setLoading(false)
-        }
-    };
     return (
         
         <Grid
@@ -51,21 +31,18 @@ const Landing = () => {
         alignItems="center"
         sx={{py:2}}>
 
-{!success && (
           <div>
             <TextField
               sx={{ mr: 2 }}
               size="small"
               label="me@mail.com"
               variant="outlined"
-              onChange={(e) => setEmail(e.target.value)}
             />
-            <Button variant="contained" onClick={login}>
-              Signup
+            <Button variant="contained">
+              Signup / Login
             </Button>
           </div>
-        )}
-             {success && <Alert severity="info">Please check your mailbox.</Alert>}
+
         </Grid>
 
         <Grid item ={true}>
