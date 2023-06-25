@@ -85,7 +85,13 @@ const handleChange = (index: number, key: keyof Event)=>{
   return (
     <Card
       variant="outlined"
-      sx={{ minWidth: 275, maxWidth: 600, mx: "auto", px: 2, py: 1, my: 2 }}
+      sx={{ minWidth: 275,
+        maxWidth: 600, mx: "auto", 
+        px: 2, py: 1, my: 2 ,
+        border: 5,
+        borderRadius: 7,
+        borderColor: 'primary.main',
+       }}
     >
       <CardContent>
         <Grid sx={{ mb: 3 }}>

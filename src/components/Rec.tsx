@@ -9,6 +9,17 @@ import Typography from '@mui/material/Typography';
 const steps = ['Step a step back', 'Watch and Listen', 'Breathe'];
 
 export default function HorizontalLinearStepper() {
+
+  const quotes = [
+    "Every step forward your child takes is a testament to your unwavering love, strength, and belief in their limitless potential - you got this!",
+    "Your unwavering support and dedication as a parent are guiding lights that illuminate your child's unique journey.",
+    "In the face of challenges, your love for your child with special needs shines brighter, showing them a world full of infinite possibilities.",
+    "Your role as a parent is not measured by the milestones achieved, but by the immeasurable love and encouragement you give to your child every day.",
+    "Remember that you are not alone on this journey - embrace the strength of your community, and together, you can overcome any obstacle.",
+    "Your child's special needs may present unique challenges, but within those challenges lie opportunities for extraordinary growth and resilience."
+  ];
+
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   const [activeStep, setActiveStep] = React.useState(0);
   const isStepOptional = (step: number) => {
     return step === 1;
@@ -53,7 +64,7 @@ export default function HorizontalLinearStepper() {
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-            Ignore the bad, embrace the good - you got this!
+            {randomQuote}
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />

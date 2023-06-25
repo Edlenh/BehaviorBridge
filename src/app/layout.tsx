@@ -48,8 +48,8 @@ export default function RootLayout({
               {!isLoggedIn ? (
                 <div className='landingLogin'>
                   <Landing/>
-                  <Button variant="contained" onClick={handleLogin}>
-                    Get Started
+                  <Button className='landingButton' variant="contained" onClick={handleLogin}>
+                    Login
                   </Button>
                 </div>
               ) : (

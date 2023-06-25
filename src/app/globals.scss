@@ -29,12 +29,15 @@
    
   }
 
-  .Landing{
+  .landingSpan{
     text-decoration: underline;
+    text-decoration-color:#0077B6;
+  }
+  .Landing{
     background-image: linear-gradient(
       transparent 50%,
       #e1fffe 50%,
-      #b0f8ff 85%,
+      #0077B6 85%,
       transparent 85%,
       transparent 100%
   );
@@ -61,4 +64,12 @@
     100% {
         opacity: 1;
      }
+}
+
+.landingButton{
+  font-weight: 500;
+}
+
+.spacer{
+  margin-top: 10px;
 }
