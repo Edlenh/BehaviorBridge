@@ -1,11 +1,14 @@
 "use client";
+import { useState } from "react";
 import dayjs from "dayjs"
 import CalendarHeatmap from 'react-calendar-heatmap';
 import "react-calendar-heatmap/dist/styles.css";
-import {Alert, AlertTitle, Button, Grid} from "@mui/material";
+import {Alert, AlertTitle, Button, Grid, Collapse} from "@mui/material";
 import { Event } from "@/types";
 import AiHelp from "./openAi"
 import HorizontalLinearStepper from "./Rec";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import '../app/globals.scss'
 
 type Props ={
@@ -13,14 +16,22 @@ type Props ={
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 };
 
+
 //pass props to the calender
 export default function Calendar({events, setOpen}: Props){
+    
     let yearly = dayjs().subtract(365, "days").format("YYYY-MM-DD");
     const formattedEvents = events.map((event)=>({
         ...event,
         //spread through all events
         date: dayjs(event.date).format("YYYY-MM-DD"),
-    }))
+
+    }));
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
+    };
     return(
         <Grid item className="Calendar" sx={{p:4, border: 3,
          borderColor:"#00B4D8",
@@ -48,7 +59,11 @@ export default function Calendar({events, setOpen}: Props){
                 </Button>
             </Grid>
             <CalendarHeatmap 
-           onClick={value => alert("Behavior Tracked!")}
+          onClick={(value) => {
+            if (value) {
+              alert("Behavior Tracked!");
+            }
+          }}
             startDate ={yearly}
             showWeekdayLabels
             values={formattedEvents}
@@ -62,10 +77,15 @@ export default function Calendar({events, setOpen}: Props){
           
             />
             {/* todo: add chatgpt engine to provide recs */}
-            <Alert severity="info"> <AlertTitle>Feeling Frustrated?</AlertTitle>
-                
-                <span><HorizontalLinearStepper /></span>
-                </Alert> 
+            <Alert severity="info">
+        <AlertTitle>Feeling Frustrated?</AlertTitle>
+        <span onClick={toggleDropdown}>
+          {isDropdownOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon/>} 
+        </span>
+        <Collapse in={isDropdownOpen}>
+          <HorizontalLinearStepper />
+        </Collapse>
+      </Alert>
         </Grid>
     );
 };

@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import {Avatar, Grid, Button, FormControlLabel, Switch} from "@mui/material";
+import { Grid, Button, FormControlLabel, Switch} from "@mui/material";
 import {usePathname, useRouter} from "next/navigation";
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -45,12 +45,7 @@ export default function Header({switchTheme} : {switchTheme:any}){
                     checkedIcon={<DarkModeIcon />}
                     />
                 }label={<LightModeIcon/>}/>
-                <Avatar
-                    className="pointer"
-                    onClick ={() => router.push("/profile")}
-                    sx={{width: 56, height: 56, backgroundColor:"#00B4D8", textTransform:"capitalize"}}>
-                  
-                    </Avatar>
+               
                  </Grid>
                  </Grid>
             </Grid>

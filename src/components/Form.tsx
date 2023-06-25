@@ -4,6 +4,7 @@ import config from "../util/config"
 import { useState, useEffect } from "react";
 import {
   Card,
+  TextField,
   CardContent,
   Grid,
   Slider,
@@ -104,20 +105,16 @@ const handleChange = (index: number, key: keyof Event)=>{
             />
           </Grid>
           <Grid item xs={12}>
-            <p>Duration. Min / HR</p>
+            <p>Duration</p>
             <Stack
               spacing={2}
               direction="row"
               sx={{ mb: 1 }}
               alignItems="center"
             >
-              <span>0</span>
-              <Slider
-                defaultValue={1}
-                step={1}
-                min={0}
-                max={24}
-                valueLabelDisplay="auto"
+              
+              <TextField id="outlined-basic" label="Min / HR" variant="outlined" 
+              
                 onChange={(e) => {
                   const inputElement = e.target as HTMLInputElement;
                   setEvent({
@@ -126,7 +123,7 @@ const handleChange = (index: number, key: keyof Event)=>{
                   });
                 }}
               />
-              <span>24</span>
+              
             </Stack>
           </Grid>
           <Grid item xs={12}>

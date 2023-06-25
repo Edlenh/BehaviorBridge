@@ -4,6 +4,8 @@ import {Button, TextField, Grid,Alert} from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
 import BasicCard from "./Card";
+import "../app/globals.scss"
+
 
 const Landing = () => {
   
@@ -21,29 +23,12 @@ const Landing = () => {
                 keeping track of behaviors in their daily life.
             </p>
             </Grid>
-
-        <BasicCard />
-
         <Grid item
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{py:2}}>
-
-          <div>
-            <TextField
-              sx={{ mr: 2 }}
-              size="small"
-              label="me@mail.com"
-              variant="outlined"
-            />
-            <Button variant="contained">
-              Signup / Login
-            </Button>
-          </div>
-
-        </Grid>
+        sx={{py:2}}> </Grid>
 
         <Grid item ={true}>
             <Image

@@ -15,7 +15,7 @@ export default function UserHeader(){
               
             </Grid>
             <Grid item>
-                <h1>Hello</h1>
+                <h1>AI goes here</h1>
                
                 {/* <Button>Sign Out</Button> */}
             </Grid>
