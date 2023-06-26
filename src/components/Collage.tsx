@@ -12,16 +12,25 @@ export default function Collage() {
   return (
     <ImageList sx={{ width: '100%', height: isMobile ? 'auto' : 450 }}>
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
+         <ImageListItem key={item.img}>
+         <div style={{ width: '100%', height: '100%', display: 'block' }}>
+           <a
+             href={item.link}
+             target="_blank"
+             rel="noopener noreferrer"
+             style={{ display: 'block', width: '100%', height: '100%' }}
+           >
+             <img
+               src={`${item.img}?w=248&fit=crop&auto=format`}
+               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+               alt={item.title}
+               loading="lazy"
+               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+             />
+           </a>
+         </div>
+         <ImageListItemBar
             title={item.title}
-            subtitle={<span>by: {item.author}</span>}
             position="below"
           />
         </ImageListItem>
@@ -35,21 +44,21 @@ const itemData = [
   {
     img: 'https://sandbox-uploads.imgix.net/u/1687815590-7273328cc138a4006a0075871926c61c?w=600',
     title: 'Arts and Crafts',
-    author: '@bkristastucchio',
+    link: 'https://www.happinessishomemade.net/quick-easy-kids-crafts-anyone-can-make/'
   },
   {
     img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
     title: 'Articles from Parents',
-    author: '@rollelflex_graphy726',
+    link: 'https://www.attainaba.com/aba-blog-archives/beginners-guide-for-parents/',
   },
   {
     img: 'https://sandbox-uploads.imgix.net/u/1687815700-57a8d45d6851fba9d58a74ec3764bcf6?w=600',
     title: 'ABA News',
-    author: '@helloimnik',
+    link: "https://www.appliedbehavioranalysisedu.org/category/news-and-events/",
   },
   {
     img: 'https://sandbox-uploads.imgix.net/u/1687815855-01af76c691c52ebc821b4aaf5b62fcda?w=600',
     title: 'Misc',
-    author: '@nolanissac',
+    link: 'https://www.psychologytoday.com/us/therapy-types/applied-behavior-analysis',
   }
 ];
