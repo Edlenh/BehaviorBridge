@@ -82,12 +82,12 @@ export default function AiChat(){
         };
 
         setMessages([...messagesRef.current, myMessage]);
-        const response = await fetch ('/api/generate-answer',{
+        const response = await fetch('/api/generate-answer',{
             method: 'POST',
             headers: {
-                'Content-Type': 'appplication/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON. stringify({
+            body: JSON.stringify({
                 prompt: input
             })
         }).then((response) => response.json());
