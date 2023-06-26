@@ -43,7 +43,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep} alternativeLabel>
+      <Stepper activeStep={activeStep}  orientation="vertical">
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};
           const labelProps: {
@@ -82,7 +82,7 @@ export default function HorizontalLinearStepper() {
               onClick={handleBack}
               sx={{ mr: 1 }}
             >
-              Back
+              
             </Button>
             <Box sx={{ flex: '1 1 auto' }} />
             <Button onClick={handleNext}>

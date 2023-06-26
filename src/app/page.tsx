@@ -21,6 +21,7 @@ const Home = () => {
       </Grid>
       <Grid>
         <AiChat />
+        <div className="spacer"></div>
         {!open && <Calender events={events} setOpen={setOpen} />}
         {open && <Form setEvents={setEvents} setOpen={setOpen} />}
         <div className="spacer">

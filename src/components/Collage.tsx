@@ -13,7 +13,7 @@ export default function Collage() {
     <ImageList sx={{ width: '100%', height: isMobile ? 'auto' : 450 }}>
       {itemData.map((item) => (
          <ImageListItem key={item.img}>
-         <div style={{ width: '100%', height: '100%', display: 'block' }}>
+         <div style={{ width: '90%', height: '90%', display: 'block' }}>
            <a
              href={item.link}
              target="_blank"
@@ -25,7 +25,13 @@ export default function Collage() {
                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                alt={item.title}
                loading="lazy"
-               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+               style={{
+                borderRadius: 10,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+              className="hover-image"
              />
            </a>
          </div>

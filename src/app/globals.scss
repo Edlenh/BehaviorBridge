@@ -1,4 +1,6 @@
-
+*{
+  scroll-behavior: smooth;
+}
   .react-calendar-heatmap .color-filled {
     fill: #CAF0F8;
   }
@@ -75,5 +77,4 @@
 .spacer{
   margin-top: 10px;
 }
-
 

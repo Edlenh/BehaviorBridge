@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import useState from 'react-usestateref'
-
+import {Grid} from "@mui/material"
 
 enum Creator {
     Me= 0,
@@ -54,7 +54,23 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
     };
 
     return(
-        <div>
+        <Grid item className="parentResource" sx={{p:4, border: 3,
+            borderColor:"#00B4D8",
+            borderRadius: 10,
+            borderTopLeftRadius: 1,
+            borderBottomRightRadius: 25,
+            borderBottom: 12,
+             }}>
+                    <Grid 
+  direction="row"
+  container 
+  item
+  justifyContent="space-between"
+  alignItems="center"
+  justifyItems="center"
+></Grid> 
+<h1>Quick Advice</h1>
+<Grid item xs={8}>
             <input 
             value={input}
             onChange={(ev: any) => setInput(ev.target.value)}
@@ -63,8 +79,8 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
             disabled={disabled}
             onKeyDown={(ev)=> handleKeyDown(ev)}
             />
-
-        </div>
+    </Grid>
+        </Grid>
     )
 };
 
