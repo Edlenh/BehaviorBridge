@@ -51,7 +51,7 @@
   }
 }
 
-  .Calendar{
+  .Calendar, .parentResource{
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -68,8 +68,12 @@
 
 .landingButton{
   font-weight: 500;
+  border: 20px;
+  color: #fff
 }
 
 .spacer{
   margin-top: 10px;
 }
+
+

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
+import MobileStepper from '@mui/material/MobileStepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
@@ -42,7 +43,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};
           const labelProps: {

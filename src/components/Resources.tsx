@@ -1,6 +1,7 @@
 import { Grid} from "@mui/material";
 import '../app/globals.scss'
 import BasicCard from "@/components/Card";
+import Collage from "./Collage";
 
 
 const Resource = () => {
@@ -12,18 +13,21 @@ const Resource = () => {
             borderBottomRightRadius: 25,
             borderBottom: 12,
              }}>
-               <Grid 
-               direction="row"
-               container 
-               item
-               justifyContent="space-between"
-               alignItems="center"
-               justifyItems="center"
-               sx={{mb:2}}>
-                   <h1>Resources</h1>
-
-                    <Grid item xs={8}> <BasicCard /> </Grid>
-               </Grid>
+             <Grid 
+  direction="row"
+  container 
+  item
+  justifyContent="space-between"
+  alignItems="center"
+  justifyItems="center"
+>
+  <h1>Resources</h1>
+  <Grid item xs={8}>
+    <div className="example-container">
+      <Collage/>
+    </div>
+  </Grid>
+</Grid>
            
              
             
