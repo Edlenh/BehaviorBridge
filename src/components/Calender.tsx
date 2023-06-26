@@ -5,7 +5,6 @@ import CalendarHeatmap from 'react-calendar-heatmap';
 import "react-calendar-heatmap/dist/styles.css";
 import {Alert, AlertTitle, Button, Grid, Collapse} from "@mui/material";
 import { Event } from "@/types";
-import AiHelp from "./openAi"
 import HorizontalLinearStepper from "./Rec";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';

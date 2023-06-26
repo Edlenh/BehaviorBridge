@@ -1,15 +1,13 @@
 "use client";
 import * as React from "react";
-import { Grid, Button, FormControlLabel, Switch} from "@mui/material";
+import { Grid, FormControlLabel, Switch} from "@mui/material";
 import {usePathname, useRouter} from "next/navigation";
-// import Diversity1Icon from '@mui/icons-material/Diversity1';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 export default function Header({switchTheme} : {switchTheme:any}){
     const pathname = usePathname();
-    const router = useRouter();
     return (
         <Grid sx={{p:2}}>
             <Grid
@@ -17,13 +15,6 @@ export default function Header({switchTheme} : {switchTheme:any}){
             direction="row"
             justifyContent={pathname ==="/" ?"center": "space-between"}
             alignItems="center">
-                {/* <Grid item ={true} lg={6}>
-                    <Diversity1Icon 
-                    sx={{fontSize: 50,
-                    mt:1,
-                    }}
-                    />
-                    </Grid> */}
                 <Grid
                 item ={true}
                 xs={6}

@@ -1,9 +1,8 @@
 "use client";
 import * as React from "react"
-import {Button, TextField, Grid,Alert, LinearProgress} from "@mui/material"
+import { Grid } from "@mui/material"
 import Image from "next/image";
 import bbpic from "../../public/bbpic.svg";
-import BasicCard from "./Card";
 import "../app/globals.scss"
 
 

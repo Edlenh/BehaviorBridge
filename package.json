@@ -33,6 +33,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-material-ui-carousel": "^3.4.2",
+    "react-usestateref": "^1.0.8",
     "sass": "^1.63.5",
     "styled-components": "^5.3.11",
     "typescript": "5.1.3"
