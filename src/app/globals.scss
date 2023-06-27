@@ -1,6 +1,4 @@
-*{
-  scroll-behavior: smooth;
-}
+
   .react-calendar-heatmap .color-filled {
     fill: #CAF0F8;
   }
@@ -83,5 +81,27 @@
   border: 2px solid;
   align-items: center;
   width: 300px;
-  color: #0077B6
+  color: #0077B6;
+  border-bottom-left-radius: 100px 200px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 25px;
+  border-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .aiInput{
+    width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 100px 200px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 12px;
+  }
+}
+.blockTitle{
+  color: #0077B6;
+  font-size: 45px;
+  text-decoration: underline;
+  text-decoration-color:#90E0EF ;
+  border-bottom-left-radius: 250px 100px;
 }

@@ -55,7 +55,7 @@ const itemData = [
   },
   {
     img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
-    title: 'Articles from Parents',
+    title: 'Parent Articles',
     link: 'https://www.attainaba.com/aba-blog-archives/beginners-guide-for-parents/',
   },
   {

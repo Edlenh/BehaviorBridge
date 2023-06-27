@@ -1,37 +1,42 @@
-import { Grid} from "@mui/material";
-import '../app/globals.scss'
-import Collage from "./Collage";
+import React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { Grid } from '@mui/material';
+import Collage from './Collage';
 
+const YourComponent = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)'); // Adjust the breakpoint as needed
 
-const Resource = () => {
-    return ( 
-        <Grid item className="parentResource" sx={{p:4, border: 3,
-            borderColor:"#00B4D8",
-            borderRadius: 10,
-            borderTopLeftRadius: 1,
-            borderBottomRightRadius: 25,
-            borderBottom: 12,
-             }}>
-             <Grid 
-  direction="row"
-  container 
-  item
-  justifyContent="space-between"
-  alignItems="center"
-  justifyItems="center"
->
-  <h1>Resources</h1>
-  <Grid item xs={8}>
-    <div className="example-container">
-      <Collage/>
-    </div>
-  </Grid>
-</Grid>
-           
-             
-            
-           </Grid>
-     );
-}
- 
-export default Resource;
+  return (
+    <Grid
+      item
+      className="parentResource"
+      sx={{
+        p: 4,
+        border: 3,
+        borderColor: '#00B4D8',
+        borderRadius: 10,
+        borderTopLeftRadius: 1,
+        borderBottomRightRadius: 25,
+        borderBottom: 12,
+      }}
+    >
+      <Grid
+        direction={isMobile ? 'column' : 'row'}
+        container
+        item
+        justifyContent="space-between"
+        alignItems="center"
+        justifyItems="center"
+      >
+        <h1 className='blockTitle'>Resources</h1>
+        <Grid item xs={isMobile ? 4 : 8}>
+          <div className="example-container">
+            <Collage />
+          </div>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default YourComponent;

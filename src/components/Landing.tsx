@@ -38,8 +38,7 @@ const Landing = () => {
                 margin: "auto",
             }}
             src={bbpic}
-            alt= "child surrounded by blobs"
-            className="pointer"/>
+            alt= "child surrounded by blobs"/>
         </Grid>
         </Grid>
      );

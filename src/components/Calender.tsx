@@ -47,7 +47,7 @@ export default function Calendar({events, setOpen}: Props){
             alignItems="center"
             justifyItems="center"
             sx={{mb:4}}>
-                <h1>Track New Behavior</h1>
+                <h1 className="blockTitle">Track New Behavior</h1>
                 <Button 
                 sx={{color: "#00B4D8", borderColor: "#00B4D8"}}
                 className="info"

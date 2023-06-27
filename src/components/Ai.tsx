@@ -2,7 +2,10 @@
 import * as React from "react";
 import useState from 'react-usestateref'
 import {Grid} from "@mui/material"
-import LoadingButton from '@mui/lab/LoadingButton';
+import Box from '@mui/material/Box';
+import Iconsvg from "../../public/tb.svg"
+import Image from "next/image";
+
 enum Creator {
     Me= 0,
     Bot = 1
@@ -47,18 +50,21 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
     };
 
     return(
-        <Grid item className="parentResource" sx={{p:4
-             }}>
-                    <Grid 
-  direction="row"
-  container 
-  item
-  justifyContent="space-between"
-  alignItems="center"
-  justifyItems="center"
-></Grid> 
-<h1>What Behavior are you struggling with?</h1>
-<Grid item xs={10}>
+        <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+        <Grid item xs={8}>
+        <h1 className="blockTitle">Target Behavior</h1></Grid>
+            <Grid item xs={4}><Image
+            style={{
+                maxWidth: "400px",
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+            }}
+            src={Iconsvg}
+            alt= "child surrounded by blobs"/>
+            </Grid>
+            <Grid item xs={12} >
             <input className="aiInput"
             value={input}
             onChange={(ev: any) => setInput(ev.target.value)}
@@ -68,8 +74,9 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
             disabled={disabled}
             onKeyDown={(ev)=> handleKeyDown(ev)}
             />
-    </Grid>
-        </Grid>
+             </Grid>
+                </Grid>
+            </Box>     
     )
 };
 
