@@ -2,7 +2,7 @@
 import * as React from "react";
 import useState from 'react-usestateref'
 import {Grid} from "@mui/material"
-
+import LoadingButton from '@mui/lab/LoadingButton';
 enum Creator {
     Me= 0,
     Bot = 1
@@ -22,13 +22,6 @@ interface InputProps {
 const ChatMessage=({text, from} : MessageProps )=>{
     return(
         <>
-        {from == Creator.Me &&(
-            <div>
-                <h1></h1>
-                <p>{text}</p>
-            </div>
-        
-    )}
     {from == Creator.Bot &&(
         <div>
         <h1>Some quick advice</h1>
@@ -54,12 +47,7 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
     };
 
     return(
-        <Grid item className="parentResource" sx={{p:4, border: 3,
-            borderColor:"#00B4D8",
-            borderRadius: 10,
-            borderTopLeftRadius: 1,
-            borderBottomRightRadius: 25,
-            borderBottom: 12,
+        <Grid item className="parentResource" sx={{p:4
              }}>
                     <Grid 
   direction="row"
@@ -69,13 +57,14 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
   alignItems="center"
   justifyItems="center"
 ></Grid> 
-<h1>Quick Advice</h1>
-<Grid item xs={8}>
-            <input 
+<h1>What Behavior are you struggling with?</h1>
+<Grid item xs={10}>
+            <input className="aiInput"
             value={input}
             onChange={(ev: any) => setInput(ev.target.value)}
             type="text"
-            placeholder="What Behavior are you struggling with?"
+            width= "320px"
+            placeholder="Aggression, Noncompliance"
             disabled={disabled}
             onKeyDown={(ev)=> handleKeyDown(ev)}
             />
@@ -125,16 +114,32 @@ export default function AiChat(){
 
     return(
         <>
-        <div>
-            <ChatInput onSend={(input)=> callApi(input)} disabled={loading} />
-        </div>
+        <Grid item className="parentResource" sx={{p:4, border: 3,
+            borderColor:"#00B4D8",
+            borderRadius: 10,
+            borderTopLeftRadius: 1,
+            borderBottomRightRadius: 25,
+            borderBottom: 12,
+             }}>
+                    <Grid 
+  direction="row"
+  container 
+  item
+  justifyContent="space-between"
+  alignItems="center"
+  justifyItems="center"
+></Grid> 
+<Grid item xs={10}>
+            <ChatInput onSend={(input)=> callApi(input)} disabled={loading}/>
+       
 
-        <div>
+      
             {messages.map((msg: MessageProps)=>(
                 <ChatMessage key={msg.key} text={msg.text} from={msg.from} />
             ))}
           
-        </div>
+          </Grid>
+        </Grid>
         </>
     )
 }
