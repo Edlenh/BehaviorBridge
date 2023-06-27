@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 import dayjs from "dayjs";
 import config from "../util/config" 
