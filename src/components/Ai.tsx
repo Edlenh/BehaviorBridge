@@ -24,14 +24,14 @@ const ChatMessage=({text, from} : MessageProps )=>{
         <>
         {from == Creator.Me &&(
             <div>
-                <h1>This is from me</h1>
+                <h1></h1>
                 <p>{text}</p>
             </div>
         
     )}
     {from == Creator.Bot &&(
         <div>
-        <h1>This is from bot</h1>
+        <h1>Some quick advice</h1>
         <p>{text}</p>
         </div>
     )}

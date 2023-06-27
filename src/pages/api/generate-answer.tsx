@@ -29,7 +29,10 @@ export default async function handler(
 
     const aiResult = await openai.createCompletion({
         model: 'text-davinci-003',
-        prompt: `${prompt}`,
+        prompt: `As a behavioral specialist please take the user's ${prompt} 
+        and give them non medical advice on how to change the prompts behavior, keep in mind
+        that this is a parent trying to help their own child, please 
+        only give at most two lines back. ` ,
         temperature: 0.9,
         max_tokens: 2000,
         frequency_penalty: 0.5,
