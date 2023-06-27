@@ -1,6 +1,5 @@
 import { Grid} from "@mui/material";
 import '../app/globals.scss'
-import BasicCard from "@/components/Card";
 import Collage from "./Collage";
 
 
