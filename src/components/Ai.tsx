@@ -3,7 +3,7 @@ import * as React from "react";
 import useState from 'react-usestateref'
 import {Grid} from "@mui/material"
 import Box from '@mui/material/Box';
-import Iconsvg from "../../public/tb.svg"
+import Iconsvg from "../../public/behaviors.svg"
 import Image from "next/image";
 
 enum Creator {
@@ -51,7 +51,7 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
 
     return(
         <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
         <Grid item xs={8}>
         <h1 className="blockTitle">Target Behavior</h1></Grid>
         <Grid item xs={4}><Image
@@ -65,12 +65,13 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
             alt= "people talking"/>
             </Grid>
             <Grid item xs={12} >
+                <p>Enter Target Behavior Below</p>
             <input className="aiInput"
             value={input}
             onChange={(ev: any) => setInput(ev.target.value)}
             type="text"
-         
-            placeholder="Aggression, Noncompliance"
+            // placeholder="Aggression, Noncompliance"
+            autoFocus
             disabled={disabled}
             onKeyDown={(ev)=> handleKeyDown(ev)}
             />
