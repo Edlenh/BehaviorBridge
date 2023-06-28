@@ -5,6 +5,7 @@ import {Grid} from "@mui/material"
 import Box from '@mui/material/Box';
 import Iconsvg from "../../public/behaviors.svg"
 import Image from "next/image";
+import CircularProgress from '@mui/material/CircularProgress';
 
 enum Creator {
     Me= 0,
@@ -143,13 +144,15 @@ export default function AiChat(){
 ></Grid> 
 <Grid item xs={10}>
             <ChatInput onSend={(input)=> callApi(input)} disabled={loading}/>
-       
+            {loading ? (
+          <CircularProgress /> // Display the loading spinner while loading is true
+        ) : (
 
       
-            {messages.map((msg: MessageProps)=>(
+            messages.map((msg: MessageProps)=>(
                 <ChatMessage key={msg.key} text={msg.text} from={msg.from} />
-            ))}
-          
+                ))
+                )}
           </Grid>
         </Grid>
         </>
