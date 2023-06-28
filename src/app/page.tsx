@@ -15,22 +15,22 @@ const Home = () => {
   const [open, setOpen] =useState(false)
   return ( 
     <>
-    <Container>
-      <Grid>
-       
-      </Grid>
-      <Grid>
-        <AiChat />
-        <div className="spacer"></div>
-        {!open && <Calender events={events} setOpen={setOpen} />}
-        {open && <Form setEvents={setEvents} setOpen={setOpen} />}
-        <div className="spacer">
-        <Resource />
-        </div>
-             
-      </Grid>
-    </Container>
-    </>
+<Container>
+{open ? (
+<Grid>
+<Form setEvents={setEvents} setOpen={setOpen} />
+</Grid>
+) : (
+<Grid>
+<AiChat />
+<div className="spacer"></div>
+<Calender events={events} setOpen={setOpen} />
+<div className="spacer"></div>
+<Resource />
+</Grid>
+)}
+</Container>
+</>
    );
 }
  
