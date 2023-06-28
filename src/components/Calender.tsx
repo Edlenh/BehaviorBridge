@@ -49,9 +49,9 @@ export default function Calendar({events, setOpen}: Props){
             sx={{mb:4}}>
                 <h1 className="blockTitle">Track New Behavior</h1>
                 <Button 
-                sx={{color: "#00B4D8", borderColor: "#00B4D8"}}
+                sx={{color: "#fff", borderColor: "#00B4D8"}}
                 className="info"
-                variant="outlined"
+                variant="contained"
                 onClick={()=>setOpen(true)}
                 >
                     New
