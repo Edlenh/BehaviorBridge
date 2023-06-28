@@ -4,7 +4,7 @@ import { Grid, FormControlLabel, Switch} from "@mui/material";
 import {usePathname, useRouter} from "next/navigation";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-
+import Brightness6Icon from '@mui/icons-material/Brightness6';
 
 export default function Header({switchTheme} : {switchTheme:any}){
     const pathname = usePathname();
@@ -35,7 +35,7 @@ export default function Header({switchTheme} : {switchTheme:any}){
                     icon={<LightModeIcon />}
                     checkedIcon={<DarkModeIcon />}
                     />
-                }label={<LightModeIcon/>}/>
+                }label={<Brightness6Icon/>}/>
                
                  </Grid>
                  </Grid>

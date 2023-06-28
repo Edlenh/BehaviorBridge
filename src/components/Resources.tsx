@@ -17,7 +17,7 @@ const YourComponent = () => {
         borderRadius: 10,
         borderTopLeftRadius: 1,
         borderBottomRightRadius: 25,
-        borderBottom: 12,
+        borderBottom: 12, 
       }}
     >
       <Grid
