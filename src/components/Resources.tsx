@@ -11,7 +11,7 @@ const YourComponent = () => {
       item
       className="parentResource"
       sx={{
-        p: 4,
+        p: 10,
         border: 3,
         borderColor: '#00B4D8',
         borderRadius: 10,

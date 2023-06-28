@@ -24,14 +24,14 @@ interface InputProps {
 
 const ChatMessage=({text, from} : MessageProps )=>{
     return(
-        <>
+        <Grid>
     {from == Creator.Bot &&(
         <div>
         <h1>Some quick advice</h1>
         <p>{text}</p>
         </div>
     )}
-    </>
+    </Grid>
     );
 }
 
@@ -51,33 +51,37 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
 
     return(
         <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={3}>
-        <Grid item xs={8}>
-        <h1 className="blockTitle">Target Behavior</h1></Grid>
-        <Grid item xs={4}><Image
-            style={{
-                maxWidth: "400px",
-                width: "100%",
-                height: "auto",
-                margin: "auto",
-            }}
-            src={Iconsvg}
-            alt= "people talking"/>
-            </Grid>
-            <Grid item xs={12} >
-                <p>Enter Target Behavior Below</p>
-            <input className="aiInput"
-            value={input}
-            onChange={(ev: any) => setInput(ev.target.value)}
-            type="text"
-            // placeholder="Aggression, Noncompliance"
-            autoFocus
-            disabled={disabled}
-            onKeyDown={(ev)=> handleKeyDown(ev)}
-            />
-             </Grid>
-                </Grid>
-            </Box>     
+  <Grid container spacing={3} sx={{ p: 2 }}>
+    <Grid item xs={12} sm={8}>
+      <h1 className="blockTitle">Target Behavior</h1>
+    </Grid>
+    <Grid item xs={12} sm={4}>
+      <Image
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          margin: "auto",
+        }}
+        src={Iconsvg}
+        alt="question mark by some circles"
+      />
+    </Grid>
+    <Grid item xs={12}>
+      <p>Enter Target Behavior Below</p>
+      <input
+        className="aiInput"
+        value={input}
+        onChange={(ev) => setInput(ev.target.value)}
+        type="text"
+        placeholder="Aggression, Noncompliance"
+        autoFocus
+        disabled={disabled}
+        onKeyDown={handleKeyDown}
+      />
+    </Grid>
+  </Grid>
+</Box>
+
     )
 };
 

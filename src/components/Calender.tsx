@@ -32,7 +32,7 @@ export default function Calendar({events, setOpen}: Props){
       setIsDropdownOpen(!isDropdownOpen);
     };
     return(
-        <Grid item className="Calendar" sx={{p:4, border: 3,
+        <Grid item className="Calendar" sx={{p:10, border: 3,
          borderColor:"#00B4D8",
          borderRadius: 10,
          borderTopLeftRadius: 1,
