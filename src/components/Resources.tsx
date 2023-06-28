@@ -2,6 +2,8 @@ import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid } from '@mui/material';
 import Collage from './Collage';
+import '../app/globals.scss'
+
 
 const YourComponent = () => {
   const isMobile = useMediaQuery('(max-width: 600px)'); // Adjust the breakpoint as needed

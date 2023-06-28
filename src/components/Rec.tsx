@@ -5,6 +5,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import '../app/globals.scss'
 
 const steps = ['Step a step back', 'Watch and Listen', 'Breathe'];
 
