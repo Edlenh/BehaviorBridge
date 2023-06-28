@@ -1,58 +1,81 @@
-/* * {
-  scroll-behavior: smooth;
-}
-
 .react-calendar-heatmap .color-filled {
   fill: #CAF0F8;
 }
-
 .react-calendar-heatmap .color-github-0 {
   fill: #eeeeee;
 }
-
 .react-calendar-heatmap .color-github-1 {
   fill: #CAF0F8;
 }
-
 .react-calendar-heatmap .color-github-2 {
   fill: #CAF0F8;
 }
-
 .react-calendar-heatmap .color-github-3 {
   fill: #CAF0F8;
 }
-
 .react-calendar-heatmap .color-github-4 {
   fill: #90E0EF;
 }
+
 
 .react-calendar-heatmap rect:hover {
   stroke: #555;
   stroke-width: 1px;
 }
 
-.landingLogin {
+.landingLogin{
   text-align: center;
+ 
 }
 
-.landingSpan {
+.landingSpan{
   text-decoration: underline;
-  text-decoration-color: #0077B6;
+  text-decoration-color:#0077B6;
 }
-
-.Landing {
-  background-image: linear-gradient(transparent 50%, #e1fffe 50%, #0077B6 85%, transparent 85%, transparent 100%);
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
+.Landing{
+  background-image: linear-gradient(
+    transparent 50%,
+    #e1fffe 50%,
+    #0077B6 85%,
+    transparent 85%,
+    transparent 100%
+);
+background-repeat: no-repeat;
+background-size: 0% 100%;
+animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
 }
-
 @keyframes animatedBackground {
-  to {
+to {
     background-size: 100% 100%;
-  }
 }
-.Calendar, .parentResource {
+}
+
+.Calendar{
+padding-left: 100px;
+padding-right: 100px;
+margin-right: 100px;
+margin-left: 100px;
+margin-bottom: 50px;
+}
+.parentResource{
+padding-left: 100px;
+padding-right: 100px;
+margin-right: 100px;
+margin-left: 100px;
+margin-bottom: 50px;
+}
+
+@media (max-width: 480px){
+.Calendar, .parentResource{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+}
+
+.Calendar, .parentResource{
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -60,18 +83,58 @@
 
 @keyframes fadeInAnimation {
   0% {
-    opacity: 0;
+      opacity: 0;
   }
   100% {
-    opacity: 1;
-  }
-}
-.landingButton {
-  font-weight: 500;
-  border: 20px;
-  color: #fff;
+      opacity: 1;
+   }
 }
 
-.spacer {
-  margin-top: 10px;
-}# sourceMappingURL=globals.css.map */
+.landingButton{
+font-weight: 500;
+border: 20px;
+color: #fff
+}
+
+.spacer{
+margin-top: 10px;
+}
+
+.aiInput{
+border-radius: 5x;
+border: 2px solid;
+align-items: center;
+width: 100%;
+color: #0077B6;
+margin-bottom: 50px;
+padding: 10px;
+}
+
+
+.blockTitle{
+color: #0077B6;
+font-size: 45px;
+
+}
+
+@media (max-width: 480px){
+.blockTitle{
+font-size: 30px;
+}}
+
+/* width */
+::-webkit-scrollbar {
+width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px grey;
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #0077B6;
+border-radius: 5px;
+}
