@@ -54,7 +54,7 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
         <Grid container spacing={2}>
         <Grid item xs={8}>
         <h1 className="blockTitle">Target Behavior</h1></Grid>
-            <Grid item xs={4}><Image
+        <Grid item xs={4}><Image
             style={{
                 maxWidth: "400px",
                 width: "100%",
@@ -62,14 +62,14 @@ const ChatInput = ({onSend, disabled}: InputProps) =>{
                 margin: "auto",
             }}
             src={Iconsvg}
-            alt= "child surrounded by blobs"/>
+            alt= "people talking"/>
             </Grid>
             <Grid item xs={12} >
             <input className="aiInput"
             value={input}
             onChange={(ev: any) => setInput(ev.target.value)}
             type="text"
-            width= "320px"
+         
             placeholder="Aggression, Noncompliance"
             disabled={disabled}
             onKeyDown={(ev)=> handleKeyDown(ev)}
